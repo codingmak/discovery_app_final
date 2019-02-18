@@ -1,0 +1,17 @@
+
+
+#setting,
+#template,
+#render,
+#values {
+
+     width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid #ccc;
+}
+
+#render {
+    background: #eee;
+}
