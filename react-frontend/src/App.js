@@ -14,7 +14,7 @@ export default class App extends Component {
         isLoading: false,
         
         value: ' ', 
-        value2: "{\'name\': \'John\', \'test\': true }",
+        value2: ' ',
         dummy_values: false,
        
         };
@@ -30,7 +30,7 @@ export default class App extends Component {
     }
 
       
-//post
+
  click() {
         //what to send over to flask:
    /*     template: $('#template').val(),
@@ -87,11 +87,10 @@ export default class App extends Component {
   }
 
 
-
-
-toggleDummy(event) {
+  toggleDummy(event) {
    this.setState({dummy_values: !this.state.dummy_values});
 }
+
   handleSubmit(event) {
     event.preventDefault();
 }
