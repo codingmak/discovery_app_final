@@ -30,7 +30,7 @@ def get_custom_filters():
 
 @app.route("/")
 def home():
-    return render_template('index.html', token="Flask is running" ,custom_filters=get_custom_filters())
+    return render_template('index.html', token="App is running" ,custom_filters=get_custom_filters())
 
 
 

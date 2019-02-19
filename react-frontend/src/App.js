@@ -16,7 +16,7 @@ export default class App extends Component {
         value: ' ', 
         value2: ' ',
         dummy_values: false,
-       
+
         };
         
 
@@ -91,6 +91,8 @@ export default class App extends Component {
    this.setState({dummy_values: !this.state.dummy_values});
 }
 
+
+
   handleSubmit(event) {
     event.preventDefault();
 }
@@ -125,8 +127,8 @@ export default class App extends Component {
             </div>
             <div class="col-md-5">
                 <h1>Render</h1>
-       
-                <div id="render"> {this.state.loading || !this.state.data? <div id="render">Press Convert...</div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}</div>
+                
+                <div id="render"> {this.state.loading || !this.state.data ? <div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}</div>
       
             </div>
             
