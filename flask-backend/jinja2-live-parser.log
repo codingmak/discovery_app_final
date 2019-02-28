@@ -1173,3 +1173,263 @@ Traceback (most recent call last):
   File "parser.py", line 91, in convert
     print(hit)
 NameError: name 'hit' is not defined
+2019-02-19 17:14:37,870 - __main__ - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 25, in home
+    return render_template('index.html', token="App is running" ,custom_filters=get_custom_filters())
+NameError: name 'get_custom_filters' is not defined
+2019-02-19 17:14:41,313 - __main__ - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 25, in home
+    return render_template('index.html', token="App is running" ,custom_filters=get_custom_filters())
+NameError: name 'get_custom_filters' is not defined
+2019-02-28 16:17:44,624 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 38, in convert
+    custom_filters = get_custom_filters()
+NameError: name 'get_custom_filters' is not defined
+2019-02-28 16:18:16,232 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 38, in convert
+    custom_filters = get_custom_filters()
+NameError: name 'get_custom_filters' is not defined
+2019-02-28 16:18:18,000 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 38, in convert
+    custom_filters = get_custom_filters()
+NameError: name 'get_custom_filters' is not defined
+2019-02-28 16:18:18,144 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 38, in convert
+    custom_filters = get_custom_filters()
+NameError: name 'get_custom_filters' is not defined
+2019-02-28 16:20:59,179 - __main__ - DEBUG - Add the following customer filters to Jinja environment: leetify
+2019-02-28 16:23:27,119 - __main__ - DEBUG - Add the following customer filters to Jinja environment: leetify
+2019-02-28 16:23:43,640 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:24:03,247 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:24:28,492 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:24:49,995 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:24:53,328 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:24:53,877 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 47, in convert
+    custom_filters = get_custom_filters()
+  File "parser.py", line 26, in get_custom_filters
+    custom_filters[filter_name] = m[1]
+TypeError: 'set' object does not support item assignment
+2019-02-28 16:25:16,112 - __main__ - DEBUG - Add the following customer filters to Jinja environment: leetify
+2019-02-28 16:25:49,287 - __main__ - DEBUG - Add the following customer filters to Jinja environment: leetify
+2019-02-28 16:25:55,923 - __main__ - DEBUG - Add the following customer filters to Jinja environment: leetify
+2019-02-28 16:28:09,666 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:28:10,341 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:28:18,307 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:28:59,104 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:29:02,376 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:44,831 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:55,755 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:56,165 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:56,776 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:56,918 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:57,080 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:57,262 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:31:58,297 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:32:04,071 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 
+2019-02-28 16:32:55,085 - __main__ - DEBUG - Add the following customer filters to Jinja environment: 

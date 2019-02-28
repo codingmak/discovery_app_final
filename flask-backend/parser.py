@@ -1,7 +1,7 @@
 from __future__ import absolute_import, print_function
 
 from flask import Flask, render_template, request
-from jinja2 import Environment, meta, exceptions
+from jinja2 import Environment, meta, exceptions,filters, contextfilter,
 from random import choice
 from inspect import getmembers, isfunction
 from cgi import escape
@@ -18,7 +18,7 @@ CORS(app)
 # cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 def get_custom_filters():
-    import filters
+    
     custom_filters = {}
     for m in getmembers(filters):
         if m[0].startswith('filter_') and isfunction(m[1]):
@@ -28,22 +28,25 @@ def get_custom_filters():
     return custom_filters
 
 
+
 @app.route("/")
 def home():
-    return render_template('index.html', token="App is running" ,custom_filters=get_custom_filters())
+    return render_template('index.html', token="App is running" )
 
 
 
 @app.route('/convert', methods=['GET', 'POST'])
 def convert():
+
+    #DYNAMIC_PRESET_DATA make that as a placeholder
     
     jinja2_env = Environment()
 
 
     #Load custom filters
-    # custom_filters = get_custom_filters()
-    # app.logger.debug('Add the following customer filters to Jinja environment: %s' % ', '.join(custom_filters.keys()))
-    # jinja2_env.filters.update(custom_filters)
+    custom_filters = get_custom_filters()
+    app.logger.debug('Add the following customer filters to Jinja environment: %s' % ', '.join(custom_filters.keys()))
+    jinja2_env.filters.update(custom_filters)
 
 
 

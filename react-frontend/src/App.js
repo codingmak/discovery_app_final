@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,20 +18,21 @@ export default class App extends Component {
 
         };
         
+        this.baseState = this.state 
 
 
-        
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.click = this.click.bind(this);
 
         
-
     }
 
-      
+  resetForm = () => {
+    this.setState(this.baseState)
+  }     
 
  click() {
-        //what to send over to flask:
    /*     template: $('#template').val(),
             console.log($('#template').val())
             values: $('#values').val(),
@@ -69,6 +69,47 @@ export default class App extends Component {
              })
             .catch((err) => {
                   this.setState({ data: err, isLoading: false });
+                  
+                   console.log(request_info)
+             });
+    }
+ clear() {
+   /*     template: $('#template').val(),
+            console.log($('#template').val())
+            values: $('#values').val(),
+            input_type: input_type,
+
+            //boolean
+            showwhitespaces: is_checked_showwhitespaces,
+            dummyvalues: is_checked_dummyvalues*/
+        var headers = {
+            'Content-Type': 'application/json',
+           
+        }
+
+
+        const request_info = {
+            template: this.state.value = '',
+            values: this.state.value2 = '',
+            input_type: "json",
+         
+            dummy_values: this.state.dummy_values,
+        }
+
+        this.setState({ isLoading: false });
+
+
+
+
+
+        axios.post("http://localhost:5000/convert", {request_info}, {headers: headers})
+            .then((response) => {
+                  this.setState({ data: response.data, isLoading: true });
+                     
+                   console.log(request_info)
+             })
+            .catch((err) => {
+                  this.setState({ data: err, isLoading: true });
                   
                    console.log(request_info)
              });
@@ -152,7 +193,7 @@ export default class App extends Component {
                      <div>
                         <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
                        
-                        <input type="button" class="btn btn-danger" id="clear" value="Clear" />
+                        <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
                     </div>
                 </div>
             </div>
