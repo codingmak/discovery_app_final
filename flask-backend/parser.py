@@ -5,11 +5,13 @@ from jinja2 import Environment, meta, exceptions
 from random import choice
 from inspect import getmembers, isfunction
 from cgi import escape
-#import logging
-#import logging.handlers
+import logging
+import logging.handlers
+import config
+
 import json
 import yaml
-#import config
+
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -61,15 +63,21 @@ def convert():
 
         print(json_request['request_info']['flag'])
         #depending on flag that is set concat DYNAMIC_PRESET_DATA WORKFLOW_METADATA or MOVIE METADAta
+        #Box that is for nomral templates and no Preset data tags?
+        #If there is no {{DYNAMIC_PRESET_DATA}} {{WORKFLOW_METADATA}} {{MOVIE_METADATA}}  in template it will hit an error.
         try:
             
-            if json_request['request_info']['flag'] == 'D':           
+            if json_request['request_info']['flag'] == 'D' and "DYNAMIC_PRESET_DATA" in json_request['request_info']['template']:           
                 add_metadata = "{ \"DYNAMIC_PRESET_DATA\":"
-            elif json_request['request_info']['flag'] == 'W':
-                add_metadata = "{ \"WORKFLOW_PRESET_DATA\":"
-            elif json_request['request_info']['flag'] == 'M':
+            elif json_request['request_info']['flag'] == 'W' and "WORKFLOW_METADATA" in json_request['request_info']['template']:
+                add_metadata = "{ \"WORKFLOW_METADATA\":"
+            elif json_request['request_info']['flag'] == 'M' and "MOVIE_METADATA" in json_request['request_info']['template']:
                 add_metadata = "{ \"MOVIE_METADATA\":"
-
+            #Normal template?
+            elif json_request['request']['flag'] == 'NA':
+                add_metadata = " " 
+            else:
+                return "You are either using the wrong settings or there is an issue with your template... Please Check"
         except KeyError:
             print("No Metadata exist")
 
@@ -107,9 +115,17 @@ def convert():
             if json_request['request_info']['input_type'] == "json":
                         
                 try:
-                    values = json_request['request_info']['values']
+
+                    #print("Here is metadata" + str(add_metadata))
+                    if json_request['request_info']['flag'] == 'D' or json_request['request_info']['flag'] == 'W' or json_request['request_info']['flag'] == 'M': 
+                        values = str(add_metadata) + json_request['request_info']['values'] + "}"
+                        #concatentating the metadata here?
+                    else:
+                        values = json_request['request_info']['values']
+                        
+                       # values = json.loads(add_metadata+values)
                     values = json.loads(values)
-                    print(values)
+                    print("Values:" + str(values))
                 
                 except ValueError as e:
                     return "Value error in JSON: {0}".format(e)
@@ -135,10 +151,10 @@ def convert():
 
 if __name__ == "__main__":
     # Set up logging
-    #app.logger.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
-    # file_handler = logging.handlers.RotatingFileHandler(filename=config.LOGGING_LOCATION, maxBytes=10*1024*1024, backupCount=5)
-    # file_handler.setFormatter(logging.Formatter(config.LOGGING_FORMAT))
-    # file_handler.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
-    # app.logger.addHandler(file_handler)
+    app.logger.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
+    file_handler = logging.handlers.RotatingFileHandler(filename=config.LOGGING_LOCATION, maxBytes=10*1024*1024, backupCount=5)
+    file_handler.setFormatter(logging.Formatter(config.LOGGING_FORMAT))
+    file_handler.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
+    app.logger.addHandler(file_handler)
 
     app.run()

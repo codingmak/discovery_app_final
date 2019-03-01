@@ -18,7 +18,7 @@ export default class App extends Component {
         dummy_values: false,
 
         };
-        
+        //for reset
         this.baseState = this.state 
 
 
@@ -75,56 +75,7 @@ export default class App extends Component {
                    console.log(request_info)
              });
     }
- clear() {
-   /*     template: $('#template').val(),
-            console.log($('#template').val())
-            values: $('#values').val(),
-            input_type: input_type,
-            //boolean
-            showwhitespaces: is_checked_showwhitespaces,
-            dummyvalues: is_checked_dummyvalues*/
-        var headers = {
-            'Content-Type': 'application/json',
-           
-        }
 
-
-        const request_info = { 
-
-
-
-            template: this.state.value1 = '',
-
-
-
-            values: this.state.value2 = '',
-
-
-
-
-            input_type: "json",
-         
-            dummy_values: this.state.dummy_values,
-        }
-
-        this.setState({ isLoading: false });
-
-
-
-
-
-        axios.post("http://localhost:5000/convert", {request_info}, {headers: headers})
-            .then((response) => {
-                  this.setState({ data: response.data, isLoading: true });
-                     
-                   console.log(request_info)
-             })
-            .catch((err) => {
-                  this.setState({ data: err, isLoading: true });
-                  
-                   console.log(request_info)
-             });
-    }
 
 
   handleRadioChange(src) {
@@ -219,7 +170,7 @@ export default class App extends Component {
                 <div id="settings">
                     
                  
-                    <h1> JSON</h1>
+                   
                     
 
 
