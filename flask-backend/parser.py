@@ -165,9 +165,7 @@ def convert():
                 # values = json_request['request_info']['regular']
                 # values = json.loads(values)
                 
-            
-            except ValueError as e:
-                return " You have not put valid json in any boxes please check again" 
+           
                 #return "Value error in JSON: {0}".format(e)
 
 
