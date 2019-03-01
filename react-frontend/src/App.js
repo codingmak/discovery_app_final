@@ -55,15 +55,11 @@ export default class App extends Component {
 
         const request_info = {
             template: this.state.value1,
-            //reg
-            regular: this.state.value2 ,
-            //dyn
+            regular: this.state.value2 , 
             dynamic: this.state.value3,
             workflow: this.state.value4,
             movie: this.state.value5,
-
             input_type: "json",
-            //depends on what is selected will send either DYNAMIC, WORKFLOW or MOVIE
             flag: this.state.flag,
             dummy_values: this.state.dummy_values,
         }
@@ -149,38 +145,42 @@ export default class App extends Component {
             
          </div>
 
+       
          <div class="col-md-5">
          <h2>Render</h2>
          <div id="render"> {this.state.loading || !this.state.data ? < div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}
          </div>
 
-         <div class="col-md-2">
-           <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
-           <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
-         </div>
+         
       </div>
+       <div class="col-md-2">
+           <div style={{position: 'absolute', bottom: 0}}>
+               <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
+               <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
+               </div>
+             </div>
 
 
-</div>
-  <div class="row">
-   <div class="col-md-5">
-      <h2>Regular</h2>
-      <textarea id="values" value={this.state.value2} placeholder={"{\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-   </div>
-   <div class="col-md-5">
-      <h2>DYNAMIC_PRESET_DATA</h2>
-      <textarea id="values" value={this.state.value3} placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange3.bind(this)}></textarea>
-   </div>
-   <div class="col-md-5">
-      <h2>WORKFLOW_METADATA</h2>
-      <textarea id="values" value={this.state.value4}  placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange4.bind(this)}></textarea>
-   </div>
-   <div class="col-md-5">
-      <h2>MOVIE_METADATA</h2>
-      <textarea id="values" value={this.state.value5} placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange5.bind(this)}></textarea>
-   </div>
-</div>
-</form>
+      </div>
+            <div class="row">
+             <div class="col-md-5">
+                <h2>Regular</h2>
+                <textarea id="values" value={this.state.value2} placeholder={"{\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
+             </div>
+             <div class="col-md-5">
+                <h2>DYNAMIC_PRESET_DATA</h2>
+                <textarea id="values" value={this.state.value3} placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange3.bind(this)}></textarea>
+             </div>
+             <div class="col-md-5">
+                <h2>WORKFLOW_METADATA</h2>
+                <textarea id="values" value={this.state.value4}  placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange4.bind(this)}></textarea>
+             </div>
+             <div class="col-md-5">
+                <h2>MOVIE_METADATA</h2>
+                <textarea id="values" value={this.state.value5} placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange5.bind(this)}></textarea>
+             </div>
+          </div>
+          </form>
 </div>
     );
   }

@@ -100,7 +100,7 @@ def convert():
                     print(str(values))
                     values1 = json.loads(value)
                     values.update(values1)
-                    
+
             except ValueError as e:
                 return " You have not put valid json in DYNAMIC_PRESET_DATA box please check again" 
 
@@ -124,6 +124,18 @@ def convert():
 
             except ValueError as e:
                 return " You have not put valid json in MOVIE_METADATA box please check again"
+
+            try:
+                if 'MOVIE_METADATA' in json_request['request_info']['template']:
+                    value = json_request['request_info']['regular'] 
+                    print(str(value))
+                    values4 = json.loads(value)
+                    values.update(values4)
+
+            except ValueError as e:
+                return " You have not put valid json in Regular box please check again"
+
+
 
 
 
