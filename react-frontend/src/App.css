@@ -7,25 +7,21 @@ font-style: normal;
 
 ul{
 	list-style-type: none;
-	list-style: none;
+	
 }
 #setting,
 #template,
-#render{
+#render,
+#values {
 	
      width: 100%;
     min-height: 300px;
     resize: vertical;
     font-family: "Courier New", Courier, monospace;
     border: 1px solid #ccc;
+
 }
-#values {
-     width: 100%;
-    min-height: 300px;
-    resize: vertical;
-    font-family: "Courier New", Courier, monospace;
-    border: 1px solid #ccc;
-}
+
 
 
 #render {

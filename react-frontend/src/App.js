@@ -127,13 +127,13 @@ export default class App extends Component {
     }
 
 
-handleRadioChange(src) {
+  handleRadioChange(src) {
     this.setState({flag: src});
      console.log(`You chose${src} `);
   }
 
 
-  handleChange(event) {
+  handleChange1(event) {
     this.setState({value1: event.target.value});
   }
 
@@ -179,7 +179,7 @@ handleRadioChange(src) {
             <div class="col-md-5">
                 <h2>Template</h2>
               
-               <textarea id="template" placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange.bind(this)}/>
+               <textarea id="template" placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange1.bind(this)}/>
             </div>
             <div class="col-md-5">
                 <h2>Render</h2>
@@ -193,6 +193,7 @@ handleRadioChange(src) {
          <div class="row">
 
             <div class="col-md-5">
+
                 <h2>DYNAMIC_PRESET_DATA</h2>
                
                 <textarea disabled={this.state.flag !== "D"} id="values" placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
@@ -225,11 +226,11 @@ handleRadioChange(src) {
                      <label><input type="checkbox" name="dummyvalues"  onClick={this.toggleDummy.bind(this)} /> Use dummy values</label>
 
 
-
+                              <h2>Selection: </h2>
 
 
                         
-                         <ul>
+                         <ul align="left">
                           <li>
                             <label>
                               <input

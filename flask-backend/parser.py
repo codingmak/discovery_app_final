@@ -62,7 +62,7 @@ def convert():
         print(json_request['request_info']['flag'])
         #depending on flag that is set concat DYNAMIC_PRESET_DATA WORKFLOW_METADATA or MOVIE METADAta
         try:
-            flag = ""
+            
             if json_request['request_info']['flag'] == 'D':           
                 add_metadata = "{ \"DYNAMIC_PRESET_DATA\":"
             elif json_request['request_info']['flag'] == 'W':
