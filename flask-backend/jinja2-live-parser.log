@@ -280,3 +280,330 @@ Traceback (most recent call last):
   File "parser.py", line 38, in datetimeformat
     return value.strftime(format)
 AttributeError: 'str' object has no attribute 'strftime'
+2019-03-01 15:32:20,799 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:34:06,662 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 139, in convert
+    print(str(values1+values2+value3))
+UnboundLocalError: local variable 'values2' referenced before assignment
+2019-03-01 15:34:36,263 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 157, in convert
+    print(str(values1+values2+value3))
+UnboundLocalError: local variable 'values2' referenced before assignment
+2019-03-01 15:37:42,657 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 158, in convert
+    rendered_jinja2_tpl = jinja2_tpl.render(values1).render(values2)
+AttributeError: 'str' object has no attribute 'render'
+2019-03-01 15:51:36,793 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:51:43,801 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:51:46,514 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:53:08,019 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:53:15,338 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 128, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:55:58,400 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 129, in convert
+    values = sub_work + json_request['request_info']['work'] + "}"
+NameError: name 'sub_work' is not defined
+2019-03-01 15:56:34,107 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 129, in convert
+    values = sub_workflow + json_request['request_info']['work'] + "}"
+UnboundLocalError: local variable 'sub_workflow' referenced before assignment
+2019-03-01 16:02:41,576 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 132, in convert
+    values = sub_workflow + json_request['request_info']['work'] + "}"
+NameError: name 'sub_workflow' is not defined
+2019-03-01 16:03:34,175 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 134, in convert
+    values = sub_workflow + json_request['request_info']['work'] + "}"
+KeyError: 'work'
+2019-03-01 16:03:34,616 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 134, in convert
+    values = sub_workflow + json_request['request_info']['work'] + "}"
+KeyError: 'work'
+2019-03-01 16:04:19,792 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 163, in convert
+    print(str(values1 + values2))
+UnboundLocalError: local variable 'values2' referenced before assignment
+2019-03-01 16:14:07,683 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 143, in convert
+    values3 = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2019-03-01 16:14:12,015 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 143, in convert
+    values3 = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'

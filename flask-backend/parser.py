@@ -82,14 +82,19 @@ def convert():
         #         return "You are either using the wrong settings or there is an issue with your template... Please Check"
         # except KeyError:
         #     print("No Metadata exist")
-
+        sub_dynamic = " "
+        sub_workflow = " "
+        sub_movie = " "
         if json_request['request_info']['dynamic'] or json_request['request_info']['workflow'] or json_request['request_info']['movie']:
             
             if json_request['request_info']['dynamic']:
+               
                 sub_dynamic = "{\"DYNAMIC_PRESET_DATA\":"
             if json_request['request_info']['workflow']:
+              
                 sub_workflow = "{\"WORKFLOW_METADATA\":"
             if json_request['request_info']['movie']:
+              
                 sub_movie = "{\"MOVIE_METADATA\":"
   
           
@@ -121,9 +126,35 @@ def convert():
             try:
 
                 if 'DYNAMIC_PRESET_DATA' in json_request['request_info']['template']:
-                    values = sub_dynamic + json_request['request_info']['dynamic'] + "}"
+                    value = sub_dynamic + json_request['request_info']['dynamic'] + "}"
                     print(str(values))
-                    values = json.loads(values)
+                    values1 = json.loads(value)
+                    values.update(values1)
+            except ValueError as e:
+                return " You have not put valid json in DYNAMIC_PRESET_DATA box please check again" 
+
+
+            try:
+                if 'WORKFLOW_METADATA' in json_request['request_info']['template']:
+                    value = sub_workflow + json_request['request_info']['workflow'] + "}"
+                    print(str(values))
+                    values2= json.loads(value)
+                    values.update(values2)
+
+            except ValueError as e:
+                return " You have not put valid json in WORKFLOW_METADATA box please check again" 
+
+            try:
+                if 'MOVIE_METADATA' in json_request['request_info']['template']:
+                    value = sub_movie + json_request['request_info']['movie'] + "}"
+                    print(str(value))
+                    values3 = json.loads(value)
+                    values.update(values3)
+            except ValueError as e:
+                return " You have not put valid json in MOVIE_METADATA box please check again"
+
+
+
 
 
 
@@ -142,9 +173,9 @@ def convert():
 
         # If ve have empty var array or other errors we need to catch it and show
         try:
-           
+            print("DICTIONARY VALUES" + str(values))
             rendered_jinja2_tpl = jinja2_tpl.render(values)
-       
+            print("reander: " + str(rendered_jinja2_tpl))
        
         except (exceptions.TemplateRuntimeError, ValueError, TypeError) as e:
             return "Error in your values input field: {0}".format(e)
