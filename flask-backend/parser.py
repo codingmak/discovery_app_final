@@ -5,11 +5,11 @@ from jinja2 import Environment, meta, exceptions
 from random import choice
 from inspect import getmembers, isfunction
 from cgi import escape
-import logging
-import logging.handlers
+#import logging
+#import logging.handlers
 import json
 import yaml
-import config
+#import config
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -135,14 +135,10 @@ def convert():
 
 if __name__ == "__main__":
     # Set up logging
-    app.logger.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
-    file_handler = logging.handlers.RotatingFileHandler(filename=config.LOGGING_LOCATION, maxBytes=10*1024*1024, backupCount=5)
-    file_handler.setFormatter(logging.Formatter(config.LOGGING_FORMAT))
-    file_handler.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
-    app.logger.addHandler(file_handler)
+    #app.logger.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
+    # file_handler = logging.handlers.RotatingFileHandler(filename=config.LOGGING_LOCATION, maxBytes=10*1024*1024, backupCount=5)
+    # file_handler.setFormatter(logging.Formatter(config.LOGGING_FORMAT))
+    # file_handler.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
+    # app.logger.addHandler(file_handler)
 
-    app.run(
-        host=config.HOST,
-        port=config.PORT,
-        debug=config.DEBUG,
-)
+    app.run()
