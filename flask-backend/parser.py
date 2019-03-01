@@ -17,19 +17,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
-#Need a way to filter | tojson or jsonquery
-# def get_custom_filters():
-#     import filters
-#     custom_filters = {}
-#     for m in getmembers(filters):
-#         if m[0].startswith('filter_') and isfunction(m[1]):
-#             filter_name = m[0][7:]
-#             custom_filters[filter_name] = m[1]
 
-#     return custom_filters
 
 #might need to edit format of output
 def jsonfilter(*args):
@@ -61,27 +51,7 @@ def convert():
 
     # print(request.form['template'])
     if request.method == "POST":
-    # Load the template
-        # print(json_request['request_info']['template'])
-
- 
-        #depending on flag that is set concat DYNAMIC_PRESET_DATA WORKFLOW_METADATA or MOVIE METADAta
-        #Box that is for nomral templates and no Preset data tags?
-        # #If there is no {{DYNAMIC_PRESET_DATA}} {{WORKFLOW_METADATA}} {{MOVIE_METADATA}}  in template it will hit an error.
-        # try:
-            
-        #     if "DYNAMIC_PRESET_DATA" in json_request['request_info']['template']:           
-        #         add_metadata = "{ \"DYNAMIC_PRESET_DATA\":"
-        #     elif "WORKFLOW_METADATA" in json_request['request_info']['template']:
-        #         add_metadata = "{ \"WORKFLOW_METADATA\":"
-        #     elif "MOVIE_METADATA" in json_request['request_info']['template']:
-        #         add_metadata = "{ \"MOVIE_METADATA\":"
-        #     #Normal template?
-    
-        #     else:
-        #         return "You are either using the wrong settings or there is an issue with your template... Please Check"
-        # except KeyError:
-        #     print("No Metadata exist")
+   
         sub_dynamic = " "
         sub_workflow = " "
         sub_movie = " "
