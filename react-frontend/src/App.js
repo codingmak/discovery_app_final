@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 export default class App extends Component {
 
     constructor(props, context) {
@@ -11,8 +12,8 @@ export default class App extends Component {
         this.state = { 
         data: '',
         isLoading: false,
-        
-        value: ' ', 
+        flag: ' ',
+        value1: ' ', 
         value2: ' ',
         dummy_values: false,
 
@@ -24,7 +25,8 @@ export default class App extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.click = this.click.bind(this);
-
+        this.handleRadioChange = this.handleRadioChange.bind(this);
+        
         
     }
 
@@ -37,7 +39,6 @@ export default class App extends Component {
             console.log($('#template').val())
             values: $('#values').val(),
             input_type: input_type,
-
             //boolean
             showwhitespaces: is_checked_showwhitespaces,
             dummyvalues: is_checked_dummyvalues*/
@@ -48,10 +49,11 @@ export default class App extends Component {
 
 
         const request_info = {
-            template: this.state.value,
-            values: this.state.value2,
+            template: this.state.value1,
+            values: this.state.value2 ,
             input_type: "json",
-         
+            //depends on what is selected will send either DYNAMIC, WORKFLOW or MOVIE
+            flag: this.state.flag,
             dummy_values: this.state.dummy_values,
         }
 
@@ -78,7 +80,6 @@ export default class App extends Component {
             console.log($('#template').val())
             values: $('#values').val(),
             input_type: input_type,
-
             //boolean
             showwhitespaces: is_checked_showwhitespaces,
             dummyvalues: is_checked_dummyvalues*/
@@ -88,9 +89,19 @@ export default class App extends Component {
         }
 
 
-        const request_info = {
-            template: this.state.value = '',
+        const request_info = { 
+
+
+
+            template: this.state.value1 = '',
+
+
+
             values: this.state.value2 = '',
+
+
+
+
             input_type: "json",
          
             dummy_values: this.state.dummy_values,
@@ -116,10 +127,14 @@ export default class App extends Component {
     }
 
 
+handleRadioChange(src) {
+    this.setState({flag: src});
+     console.log(`You chose${src} `);
+  }
 
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({value1: event.target.value});
   }
 
 
@@ -162,25 +177,42 @@ export default class App extends Component {
     <form class="container">
         <div class="row">
             <div class="col-md-5">
-                <h1>Template</h1>
+                <h2>Template</h2>
               
                <textarea id="template" placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange.bind(this)}/>
             </div>
             <div class="col-md-5">
-                <h1>Render</h1>
-                
-                <div id="render"> {this.state.loading || !this.state.data ? <div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}</div>
+                <h2>Render</h2>
+  
+                <div id="render"> {this.state.loading || !this.state.data ? < div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}</div>
       
             </div>
             
         </div>
 
          <div class="row">
+
             <div class="col-md-5">
-                <h1>Values</h1>
-                <textarea id="values" placeholder={" {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-            </div>
+                <h2>DYNAMIC_PRESET_DATA</h2>
+               
+                <textarea disabled={this.state.flag !== "D"} id="values" placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
+            
+              </div>
+              
+        
+            <div class="col-md-5">
+                <h2>WORKFLOW_METADATA</h2>
+                <textarea disabled={this.state.flag !== "W"} id="values" placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
+           
+          </div>
           
+            <div class="col-md-5">
+                <h2>MOVIE_METADATA</h2>
+                <textarea disabled={this.state.flag !== "M"} id="values" placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
+            </div>
+
+        
+
         <div class="col-md-5">
      
                 <div id="settings">
@@ -188,7 +220,60 @@ export default class App extends Component {
                  
                     <h1> JSON</h1>
                     
+
+
                      <label><input type="checkbox" name="dummyvalues"  onClick={this.toggleDummy.bind(this)} /> Use dummy values</label>
+
+
+
+
+
+                        
+                         <ul>
+                          <li>
+                            <label>
+                              <input
+                                type="radio"
+                                
+                                value=" DYNAMIC_PRESET_DATA"
+                                checked={this.state.flag === "D"}
+                                onChange={() => this.handleRadioChange("D")} 
+                              />
+                              DYNAMIC_PRESET_DATA
+                            </label>
+                          </li>
+                          
+                          <li>
+                            <label>
+                              <input
+                                type="radio"
+                                value=" WORKFLOW_METADATA"
+                                checked={this.state.flag === "W"}
+                                onChange={() => this.handleRadioChange("W")} 
+                              />
+                              WORKFLOW_METADATA
+                            </label>
+                          </li>
+
+                      <li>
+                            <label>
+                              <input
+                                type="radio"
+                                value=" MOVIE_METADATA"
+                                checked={this.state.flag === "M"}
+                                onChange={() => this.handleRadioChange("M")} 
+                              />
+                              MOVIE_METADATA
+                            </label>
+                        </li>
+                        </ul>
+                       
+                        
+                    
+
+
+
+
 
                      <div>
                         <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
@@ -206,7 +291,4 @@ export default class App extends Component {
     );
   }
 }
-
-
-
 

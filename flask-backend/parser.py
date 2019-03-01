@@ -1,7 +1,7 @@
 from __future__ import absolute_import, print_function
 
 from flask import Flask, render_template, request
-from jinja2 import Environment, meta, exceptions,filters, contextfilter,
+from jinja2 import Environment, meta, exceptions
 from random import choice
 from inspect import getmembers, isfunction
 from cgi import escape
@@ -17,15 +17,15 @@ CORS(app)
 
 # cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-def get_custom_filters():
-    
-    custom_filters = {}
-    for m in getmembers(filters):
-        if m[0].startswith('filter_') and isfunction(m[1]):
-            filter_name = m[0][7:]
-            custom_filters[filter_name] = m[1]
+# def get_custom_filters():
+#     import filters
+#     custom_filters = {}
+#     for m in getmembers(filters):
+#         if m[0].startswith('filter_') and isfunction(m[1]):
+#             filter_name = m[0][7:]
+#             custom_filters[filter_name] = m[1]
 
-    return custom_filters
+#     return custom_filters
 
 
 
@@ -43,10 +43,10 @@ def convert():
     jinja2_env = Environment()
 
 
-    #Load custom filters
-    custom_filters = get_custom_filters()
-    app.logger.debug('Add the following customer filters to Jinja environment: %s' % ', '.join(custom_filters.keys()))
-    jinja2_env.filters.update(custom_filters)
+    # #Load custom filters
+    # custom_filters = get_custom_filters()
+    # app.logger.debug('Add the following customer filters to Jinja environment: %s' % ', '.join(custom_filters.keys()))
+    # jinja2_env.filters.update(custom_filters)
 
 
 
@@ -58,6 +58,23 @@ def convert():
     if request.method == "POST":
     # Load the template
         # print(json_request['request_info']['template'])
+
+        print(json_request['request_info']['flag'])
+        #depending on flag that is set concat DYNAMIC_PRESET_DATA WORKFLOW_METADATA or MOVIE METADAta
+        try:
+            flag = ""
+            if json_request['request_info']['flag'] == 'D':           
+                add_metadata = "{ \"DYNAMIC_PRESET_DATA\":"
+            elif json_request['request_info']['flag'] == 'W':
+                add_metadata = "{ \"WORKFLOW_PRESET_DATA\":"
+            elif json_request['request_info']['flag'] == 'M':
+                add_metadata = "{ \"MOVIE_METADATA\":"
+
+        except KeyError:
+            print("No Metadata exist")
+
+
+
         try:
           
             jinja2_tpl = jinja2_env.from_string(json_request['request_info']['template'])

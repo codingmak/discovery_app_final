@@ -1,16 +1,32 @@
 
+h2{
+font-family: "Times New Roman", Times, serif;
+font-style: normal;
+}
 
+
+ul{
+	list-style-type: none;
+	list-style: none;
+}
 #setting,
 #template,
-#render,
-#values {
-
+#render{
+	
      width: 100%;
     min-height: 300px;
     resize: vertical;
     font-family: "Courier New", Courier, monospace;
     border: 1px solid #ccc;
 }
+#values {
+     width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid #ccc;
+}
+
 
 #render {
     background: #eee;
