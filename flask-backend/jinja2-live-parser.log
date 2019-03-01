@@ -1,4 +1,4 @@
-2019-03-01 11:11:47,546 - __main__ - ERROR - Exception on /convert [POST]
+2019-03-01 12:55:50,938 - __main__ - ERROR - Exception on /convert [POST]
 Traceback (most recent call last):
   File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,10 +14,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "parser.py", line 121, in convert
-    values = str(add_metadata) + json_request['request_info']['values'] + "}"
-UnboundLocalError: local variable 'add_metadata' referenced before assignment
-2019-03-01 11:12:01,897 - __main__ - ERROR - Exception on /convert [POST]
+  File "parser.py", line 131, in convert
+    values = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2019-03-01 12:55:52,918 - __main__ - ERROR - Exception on /convert [POST]
 Traceback (most recent call last):
   File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
     response = self.full_dispatch_request()
@@ -33,6 +35,248 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "parser.py", line 121, in convert
-    values = str(add_metadata) + json_request['request_info']['values'] + "}"
-UnboundLocalError: local variable 'add_metadata' referenced before assignment
+  File "parser.py", line 131, in convert
+    values = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2019-03-01 12:57:14,364 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 131, in convert
+    values = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2019-03-01 12:57:35,636 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 131, in convert
+    values = json.loads(values)
+  File "/usr/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2019-03-01 14:42:54,103 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 51, in convert
+    environment.filters['jsonfilter'] = jsonfilter
+NameError: name 'environment' is not defined
+2019-03-01 14:43:11,140 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 51, in convert
+    environment.filters['jsonfilter'] = jsonfilter
+NameError: name 'environment' is not defined
+2019-03-01 14:44:47,947 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 51, in convert
+    jinja2.env.filters['jsonfilter'] = jsonfilter
+NameError: name 'jinja2' is not defined
+2019-03-01 14:44:49,684 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 51, in convert
+    jinja2.env.filters['jsonfilter'] = jsonfilter
+NameError: name 'jinja2' is not defined
+2019-03-01 14:44:49,828 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 51, in convert
+    jinja2.env.filters['jsonfilter'] = jsonfilter
+NameError: name 'jinja2' is not defined
+2019-03-01 14:45:13,935 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 136, in convert
+    values = json_request['request_info']['values']
+KeyError: 'values'
+2019-03-01 14:51:22,430 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 149, in convert
+    rendered_jinja2_tpl = jinja2_tpl.render(values)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/_compat.py", line 36, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 1, in <module>
+  File "parser.py", line 38, in datetimeformat
+    return value.strftime(format)
+AttributeError: 'str' object has no attribute 'strftime'
+2019-03-01 14:52:03,735 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 149, in convert
+    rendered_jinja2_tpl = jinja2_tpl.render(values)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/_compat.py", line 36, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 1, in <module>
+  File "parser.py", line 38, in datetimeformat
+    return value.strftime(format)
+AttributeError: 'str' object has no attribute 'strftime'
+2019-03-01 14:55:39,143 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 150, in convert
+    rendered_jinja2_tpl = jinja2_tpl.render(values)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/jinja2/_compat.py", line 36, in reraise
+    raise value.with_traceback(tb)
+  File "<template>", line 1, in <module>
+  File "parser.py", line 38, in datetimeformat
+    return value.strftime(format)
+AttributeError: 'str' object has no attribute 'strftime'

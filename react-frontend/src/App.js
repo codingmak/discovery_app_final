@@ -15,6 +15,9 @@ export default class App extends Component {
         flag: ' ',
         value1: ' ', 
         value2: ' ',
+        value3: ' ',
+        value4: ' ',
+        value5: ' ',
         dummy_values: false,
 
         };
@@ -34,6 +37,8 @@ export default class App extends Component {
     this.setState(this.baseState)
   }     
 
+
+
  click() {
    /*     template: $('#template').val(),
             console.log($('#template').val())
@@ -50,7 +55,13 @@ export default class App extends Component {
 
         const request_info = {
             template: this.state.value1,
-            values: this.state.value2 ,
+            //reg
+            regular: this.state.value2 ,
+            //dyn
+            dynamic: this.state.value3,
+            workflow: this.state.value4,
+            movie: this.state.value5,
+
             input_type: "json",
             //depends on what is selected will send either DYNAMIC, WORKFLOW or MOVIE
             flag: this.state.flag,
@@ -92,6 +103,17 @@ export default class App extends Component {
   handleChange2(event) {
      this.setState({value2: event.target.value});
   }
+ handleChange3(event) {
+     this.setState({value3: event.target.value});
+  }
+
+ handleChange4(event) {
+     this.setState({value4: event.target.value});
+  }
+
+ handleChange5(event) {
+     this.setState({value5: event.target.value});
+  }
 
 
   toggleDummy(event) {
@@ -114,132 +136,52 @@ export default class App extends Component {
 
 
     return (
-      <div className="App">
-      
-          <p>
-          {window.token}
+     <div className="App">
+   <p>
+      {window.token}
+   </p>
+   <form class="container">
+      <div class="row">
 
-
-
-          </p>
-
-
-        
-    <form class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <h2>Template</h2>
-              
-               <textarea id="template" placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange1.bind(this)}/>
-            </div>
-            <div class="col-md-5">
-                <h2>Render</h2>
-  
-                <div id="render"> {this.state.loading || !this.state.data ? < div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}</div>
-      
-            </div>
+         <div class="col-md-5">
+            <h2>Template</h2>
+            <textarea id="template" value={this.state.value1} placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange1.bind(this)}/>
             
-        </div>
+         </div>
 
-         <div class="row">
+         <div class="col-md-5">
+         <h2>Render</h2>
+         <div id="render"> {this.state.loading || !this.state.data ? < div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}
+         </div>
 
-            <div class="col-md-5">
-
-                <h2>DYNAMIC_PRESET_DATA</h2>
-               
-                <textarea disabled={this.state.flag !== "D"} id="values" placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-            
-              </div>
-              
-        
-            <div class="col-md-5">
-                <h2>WORKFLOW_METADATA</h2>
-                <textarea disabled={this.state.flag !== "W"} id="values" placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-           
-          </div>
-          
-            <div class="col-md-5">
-                <h2>MOVIE_METADATA</h2>
-                <textarea disabled={this.state.flag !== "M"} id="values" placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-            </div>
-
-        
-
-        <div class="col-md-5">
-     
-                <div id="settings">
-                    
-                 
-                   
-                    
-
-
-                     <label><input type="checkbox" name="dummyvalues"  onClick={this.toggleDummy.bind(this)} /> Use dummy values</label>
-
-
-                              <h2>Selection: </h2>
-
-
-                        
-                         <ul align="left">
-                          <li>
-                            <label>
-                              <input
-                                type="radio"
-                                
-                                value=" DYNAMIC_PRESET_DATA"
-                                checked={this.state.flag === "D"}
-                                onChange={() => this.handleRadioChange("D")} 
-                              />
-                              DYNAMIC_PRESET_DATA
-                            </label>
-                          </li>
-                          
-                          <li>
-                            <label>
-                              <input
-                                type="radio"
-                                value=" WORKFLOW_METADATA"
-                                checked={this.state.flag === "W"}
-                                onChange={() => this.handleRadioChange("W")} 
-                              />
-                              WORKFLOW_METADATA
-                            </label>
-                          </li>
-
-                      <li>
-                            <label>
-                              <input
-                                type="radio"
-                                value=" MOVIE_METADATA"
-                                checked={this.state.flag === "M"}
-                                onChange={() => this.handleRadioChange("M")} 
-                              />
-                              MOVIE_METADATA
-                            </label>
-                        </li>
-                        </ul>
-                       
-                        
-                    
-
-
-
-
-
-                     <div>
-                        <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
-                       
-                        <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
-                    </div>
-                </div>
-            </div>
-  
-        </div>
-    
-    </form>
-
+         <div class="col-md-2">
+           <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
+           <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
+         </div>
       </div>
+
+
+</div>
+  <div class="row">
+   <div class="col-md-5">
+      <h2>Regular</h2>
+      <textarea id="values" value={this.state.value2} placeholder={"{\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
+   </div>
+   <div class="col-md-5">
+      <h2>DYNAMIC_PRESET_DATA</h2>
+      <textarea id="values" value={this.state.value3} placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange3.bind(this)}></textarea>
+   </div>
+   <div class="col-md-5">
+      <h2>WORKFLOW_METADATA</h2>
+      <textarea id="values" value={this.state.value4}  placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange4.bind(this)}></textarea>
+   </div>
+   <div class="col-md-5">
+      <h2>MOVIE_METADATA</h2>
+      <textarea id="values" value={this.state.value5} placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange5.bind(this)}></textarea>
+   </div>
+</div>
+</form>
+</div>
     );
   }
 }
