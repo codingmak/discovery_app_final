@@ -31,6 +31,7 @@ CORS(app)
 
 #     return custom_filters
 
+#might need to edit format of output
 def jsonfilter(*args):
     return args
 
@@ -46,15 +47,11 @@ def home():
 def convert():
 
     #DYNAMIC_PRESET_DATA make that as a placeholder
-    
+    #This is a filter
     jinja2_env = Environment()
-    #jinja2_env.filters['jsonquery'] = jsonfilter("3")
+   
    
     jinja2_env.filters['jsonquery'] = jsonfilter
-    # #Load custom filters
-    # custom_filters = get_custom_filters()
-    # app.logger.debug('Add the following customer filters to Jinja environment: %s' % ', '.join(custom_filters.keys()))
-    # jinja2_env.filters.update(custom_filters)
 
 
 
@@ -89,11 +86,11 @@ def convert():
         if json_request['request_info']['dynamic'] or json_request['request_info']['workflow'] or json_request['request_info']['movie']:
             
             if json_request['request_info']['dynamic']:
-                sub_dynamic = "{ \"DYNAMIC_PRESET_DATA\":"
+                sub_dynamic = "{\"DYNAMIC_PRESET_DATA\":"
             if json_request['request_info']['workflow']:
-                sub_workflow = "{ \"WORKFLOW_METADATA\":"
+                sub_workflow = "{\"WORKFLOW_METADATA\":"
             if json_request['request_info']['movie']:
-                sub_movie = "{ \"MOVIE_METADATA\":"
+                sub_movie = "{\"MOVIE_METADATA\":"
   
           
     
@@ -123,20 +120,20 @@ def convert():
                     
             try:
 
-                #print("Here is metadata" + str(add_metadata))
-                # try:
-                #     if json_request['request_info']['flag'] == 'D' or json_request['request_info']['flag'] == 'W' or json_request['request_info']['flag'] == 'M': 
-                #         values = str(add_metadata) + json_request['request_info']['values'] + "}"
-                #         #concatentating the metadata here?
-                #     else:
-                #         values = json_request['request_info']['values']
-                # except ValueError as e:
-                #     return "You are either using the wrong settings or there is an issue with your template... Please Check"
-                    
-                   # values = json.loads(add_metadata+values)
-                values = json_request['request_info']['regular']
-                values = json.loads(values)
-                print("Values:" + str(values))
+                if 'DYNAMIC_PRESET_DATA' in json_request['request_info']['template']:
+                    values = sub_dynamic + json_request['request_info']['dynamic'] + "}"
+                    print(str(values))
+                    values = json.loads(values)
+
+
+
+
+
+
+             
+                # values = json_request['request_info']['regular']
+                # values = json.loads(values)
+                
             
             except ValueError as e:
                 return " You have not put valid json in any boxes please check again" 
