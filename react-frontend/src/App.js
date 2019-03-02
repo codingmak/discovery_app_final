@@ -163,19 +163,16 @@ export default class App extends Component {
 
       </div>
             <div class="row">
-             <div class="col-md-5">
-                <h2>Regular</h2>
-                <textarea id="values" value={this.state.value2} placeholder={"{\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange2.bind(this)}></textarea>
-             </div>
-             <div class="col-md-5">
+           
+             <div class="col-md-4">
                 <h2>DYNAMIC_PRESET_DATA</h2>
                 <textarea id="values" value={this.state.value3} placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange3.bind(this)}></textarea>
              </div>
-             <div class="col-md-5">
+             <div class="col-md-4">
                 <h2>WORKFLOW_METADATA</h2>
                 <textarea id="values" value={this.state.value4}  placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange4.bind(this)}></textarea>
              </div>
-             <div class="col-md-5">
+             <div class="col-md-4">
                 <h2>MOVIE_METADATA</h2>
                 <textarea id="values" value={this.state.value5} placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange5.bind(this)}></textarea>
              </div>

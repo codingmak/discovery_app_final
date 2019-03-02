@@ -125,16 +125,7 @@ def convert():
             except ValueError as e:
                 return " You have not put valid json in MOVIE_METADATA box please check again"
 
-            try:
-                if 'MOVIE_METADATA' in json_request['request_info']['template']:
-                    value = json_request['request_info']['regular'] 
-                    print(str(value))
-                    values4 = json.loads(value)
-                    values.update(values4)
-
-            except ValueError as e:
-                return " You have not put valid json in Regular box please check again"
-
+           
 
 
 
@@ -155,9 +146,9 @@ def convert():
 
         # If ve have empty var array or other errors we need to catch it and show
         try:
-            print("DICTIONARY VALUES" + str(values))
+      
             rendered_jinja2_tpl = jinja2_tpl.render(values)
-            print("reander: " + str(rendered_jinja2_tpl))
+   
        
         except (exceptions.TemplateRuntimeError, ValueError, TypeError) as e:
             return "Error in your values input field: {0}".format(e)
