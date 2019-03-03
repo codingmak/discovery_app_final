@@ -21,7 +21,6 @@ CORS(app)
 
 
 
-#might need to edit format of output
 def jsonfilter(*args):
     return args
 
@@ -47,9 +46,7 @@ def convert():
 
     json_request = request.get_json(force=True)
 
-    # print(json_request)
-
-    # print(request.form['template'])
+  
     if request.method == "POST":
    
         sub_dynamic = " "
@@ -59,6 +56,8 @@ def convert():
         if json_request['request_info']['template'] == " ":
             return "[!] Template is Empty"
 
+
+
         if json_request['request_info']['dynamic'] or json_request['request_info']['workflow'] or json_request['request_info']['movie']:
             
             if json_request['request_info']['dynamic']:      
@@ -67,8 +66,7 @@ def convert():
                 sub_workflow = "{\"WORKFLOW_METADATA\":"
             if json_request['request_info']['movie']:
                 sub_movie = "{\"MOVIE_METADATA\":"
-  
-          
+
     
         #adding templates
 
@@ -100,6 +98,13 @@ def convert():
                     value = sub_dynamic + json_request['request_info']['dynamic'] + "}"
                     print(str(values))
                     values1 = json.loads(value)
+                    print("values1: " + str(values1))
+                    values.update(values1)
+                else:
+                    
+                   
+                    value = json_request['request_info']['dynamic']
+                    values1 = json.loads(value)
                     values.update(values1)
 
             except ValueError as e:
@@ -112,6 +117,13 @@ def convert():
                     print(str(values))
                     values2= json.loads(value)
                     values.update(values2)
+                else:
+                    
+                   
+                    value = json_request['request_info']['workflow']
+                    values1 = json.loads(value)
+                    values.update(values1)
+
 
             except ValueError as e:
                 return "[!] You have not put valid json in WORKFLOW_METADATA box please check again" 
@@ -122,6 +134,12 @@ def convert():
                     print(str(value))
                     values3 = json.loads(value)
                     values.update(values3)
+                else:
+                    
+                   
+                    value = json_request['request_info']['movie']
+                    values1 = json.loads(value)
+                    values.update(values1)
 
             except ValueError as e:
                 return "[!] You have not put valid json in MOVIE_METADATA box please check again"

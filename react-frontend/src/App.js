@@ -60,8 +60,7 @@ export default class App extends Component {
             workflow: this.state.value4,
             movie: this.state.value5,
             input_type: "json",
-            flag: this.state.flag,
-            dummy_values: this.state.dummy_values,
+          
         }
 
         this.setState({ isLoading: true });
