@@ -14,7 +14,7 @@ export default class App extends Component {
         isLoading: false,
         flag: ' ',
         value1: ' ', 
-        value2: ' ',
+   
         value3: ' ',
         value4: ' ',
         value5: ' ',
@@ -55,7 +55,7 @@ export default class App extends Component {
 
         const request_info = {
             template: this.state.value1,
-            regular: this.state.value2 , 
+         
             dynamic: this.state.value3,
             workflow: this.state.value4,
             movie: this.state.value5,
@@ -96,9 +96,7 @@ export default class App extends Component {
   }
 
 
-  handleChange2(event) {
-     this.setState({value2: event.target.value});
-  }
+
  handleChange3(event) {
      this.setState({value3: event.target.value});
   }
