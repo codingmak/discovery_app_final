@@ -55,16 +55,17 @@ def convert():
         sub_dynamic = " "
         sub_workflow = " "
         sub_movie = " "
+
+        if json_request['request_info']['template'] == " ":
+            return "[!] Template is Empty"
+
         if json_request['request_info']['dynamic'] or json_request['request_info']['workflow'] or json_request['request_info']['movie']:
             
-            if json_request['request_info']['dynamic']:
-               
+            if json_request['request_info']['dynamic']:      
                 sub_dynamic = "{\"DYNAMIC_PRESET_DATA\":"
-            if json_request['request_info']['workflow']:
-              
+            if json_request['request_info']['workflow']:     
                 sub_workflow = "{\"WORKFLOW_METADATA\":"
             if json_request['request_info']['movie']:
-              
                 sub_movie = "{\"MOVIE_METADATA\":"
   
           
@@ -72,7 +73,7 @@ def convert():
         #adding templates
 
         try:
-          
+           
             jinja2_tpl = jinja2_env.from_string(json_request['request_info']['template'])
            
 
@@ -81,7 +82,7 @@ def convert():
            
         except (exceptions.TemplateSyntaxError, exceptions.TemplateError) as e:
         
-            return "Syntax error in jinja2 template: {0}".format(e)
+            return "[!] Syntax error in jinja2 template: {0}".format(e)
 
       
     
@@ -102,7 +103,7 @@ def convert():
                     values.update(values1)
 
             except ValueError as e:
-                return " You have not put valid json in DYNAMIC_PRESET_DATA box please check again" 
+                return "[!] You have not put valid json in DYNAMIC_PRESET_DATA box please check again" 
 
 
             try:
@@ -113,7 +114,7 @@ def convert():
                     values.update(values2)
 
             except ValueError as e:
-                return " You have not put valid json in WORKFLOW_METADATA box please check again" 
+                return "[!] You have not put valid json in WORKFLOW_METADATA box please check again" 
 
             try:
                 if 'MOVIE_METADATA' in json_request['request_info']['template']:
@@ -123,35 +124,16 @@ def convert():
                     values.update(values3)
 
             except ValueError as e:
-                return " You have not put valid json in MOVIE_METADATA box please check again"
+                return "[!] You have not put valid json in MOVIE_METADATA box please check again"
 
            
-
-
-
-
-
-
-
-
-
-
-             
-                # values = json_request['request_info']['regular']
-                # values = json.loads(values)
-                
-           
-                #return "Value error in JSON: {0}".format(e)
-
-
-        # If ve have empty var array or other errors we need to catch it and show
         try:
       
             rendered_jinja2_tpl = jinja2_tpl.render(values)
    
        
         except (exceptions.TemplateRuntimeError, ValueError, TypeError) as e:
-            return "Error in your values input field: {0}".format(e)
+            return "[!] Error in your values input field: {0}".format(e)
 
 
 
