@@ -21,7 +21,7 @@ CORS(app)
 
 
 
-def jsonfilter(*args):
+def jsonfilter(*args,**kwargs):
     return args
 
 
@@ -100,7 +100,9 @@ def convert():
                     values1 = json.loads(value)
                     print("values1: " + str(values1))
                     values.update(values1)
-                else:
+                
+
+                elif sub_dynamic == " ":
                     
                    
                     value = json_request['request_info']['dynamic']
@@ -117,7 +119,8 @@ def convert():
                     print(str(values))
                     values2= json.loads(value)
                     values.update(values2)
-                else:
+                
+                elif sub_workflow == " ":
                     
                    
                     value = json_request['request_info']['workflow']
@@ -134,7 +137,8 @@ def convert():
                     print(str(value))
                     values3 = json.loads(value)
                     values.update(values3)
-                else:
+               
+                elif sub_movie == " ":
                     
                    
                     value = json_request['request_info']['movie']
