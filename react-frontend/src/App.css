@@ -16,6 +16,7 @@ ul{
 #render,
 #values {
 	
+	overflow-x: auto; 
      width: 100%;
     min-height: 300px;
     resize: vertical;

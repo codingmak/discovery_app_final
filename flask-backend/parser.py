@@ -19,6 +19,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+#arg1: <class 'dict'> {'rows': True} arg2: <class 'str'> rows
 
 
 #This needs to be acccessed
@@ -30,11 +31,18 @@ def jsonfilter(arg1,arg2):
     if output_dict is None:
         return "\n\n[!] Please check your json values again....\n"
     else:
+        print(type(arg1),arg1,type(arg2),arg2)
         return output_dict
-    #return type(arg1),arg1,type(arg2),arg2
+        
 
 
+def json_brackets(arg1,arg2):
 
+    #regex to remove brackets and get the string from arg2 
+
+    #output_dict = jmespath.search(arg2,arg1)
+
+    pass
 
 
 
