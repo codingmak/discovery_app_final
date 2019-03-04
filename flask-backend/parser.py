@@ -20,9 +20,18 @@ CORS(app)
 
 
 
+#This needs to be acccessed
+def jsonfilter(*args):
 
-def jsonfilter(*args,**kwargs):
-    return args
+   
+
+    # print("args:" + str(args))
+
+    return ", ".join( repr(e) for e in args)
+
+
+
+
 
 
 
@@ -83,12 +92,14 @@ def convert():
             return "[!] Syntax error in jinja2 template: {0}".format(e)
 
       
+
+
     
        
         values = {}
         
   
-       
+        # print("This is the key: " + str(key))
      
         if json_request['request_info']['input_type'] == "json":
                     
@@ -100,53 +111,68 @@ def convert():
                     values1 = json.loads(value)
                     print("values1: " + str(values1))
                     values.update(values1)
-                
 
-                elif sub_dynamic == " ":
+
+                    
+            except ValueError as e:
+                return "[!] You have not put valid json in DYNAMIC_PRESET_DATA box please check again"     
+                # elif json_request['request_info']['dynamic'] == " ":
+                #     pass
+
+                if 'DYNAMIC_PRESET_DATA' not in json_request['request_info']['template'] or json_request['request_info']['dynamic'] == " ":
                     
                    
                     value = json_request['request_info']['dynamic']
                     values1 = json.loads(value)
                     values.update(values1)
+              
 
-            except ValueError as e:
-                return "[!] You have not put valid json in DYNAMIC_PRESET_DATA box please check again" 
+         
 
 
             try:
+
                 if 'WORKFLOW_METADATA' in json_request['request_info']['template']:
-                    value = sub_workflow + json_request['request_info']['workflow'] + "}"
-                    print(str(values))
-                    values2= json.loads(value)
-                    values.update(values2)
-                
-                elif sub_workflow == " ":
                     
-                   
+                    
                     value = json_request['request_info']['workflow']
-                    values1 = json.loads(value)
-                    values.update(values1)
-
-
+                    values2 = json.loads(value)
+                    values.update(values2)
             except ValueError as e:
                 return "[!] You have not put valid json in WORKFLOW_METADATA box please check again" 
 
-            try:
-                if 'MOVIE_METADATA' in json_request['request_info']['template']:
-                    value = sub_movie + json_request['request_info']['movie'] + "}"
-                    print(str(value))
-                    values3 = json.loads(value)
-                    values.update(values3)
+
                
-                elif sub_movie == " ":
+                if 'WORKFLOW_METADATA' not in json_request['request_info']['template'] or json_request['request_info']['workflow'] == " ":
+                    value = json_request['request_info']['workflow']
+                    values2 = json.loads(value)
+                    values.update(values2)
+          
+                
+           
+             
+
+
+            try:
+
+
+                if 'MOVIE_METADATA' in json_request['request_info']['template']:
                     
                    
                     value = json_request['request_info']['movie']
-                    values1 = json.loads(value)
-                    values.update(values1)
+                    values3 = json.loads(value)
+                    values.update(values3)
 
             except ValueError as e:
                 return "[!] You have not put valid json in MOVIE_METADATA box please check again"
+
+                if 'MOVIE_METADATA' not in json_request['request_info']['template'] or json_request['request_info']['movie'] == " ":
+                    value = json_request['request_info']['movie']
+                    values3 = json.loads(value)
+                    values.update(values3)
+
+
+         
 
            
         try:
@@ -160,6 +186,10 @@ def convert():
 
 
             
+        
+        # if key in values:
+        #     print("qwer")
+
 
         return rendered_jinja2_tpl
         
