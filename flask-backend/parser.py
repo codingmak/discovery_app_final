@@ -34,13 +34,6 @@ def jsonfilter(arg1,arg2):
         
 
 
-def json_brackets(arg1,arg2):
-
-    #regex to remove brackets and get the string from arg2 
-
-    #output_dict = jmespath.search(arg2,arg1)
-
-    pass
 
 
 
