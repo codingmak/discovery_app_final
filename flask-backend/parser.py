@@ -19,10 +19,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-#arg1: <class 'dict'> {'rows': True} arg2: <class 'str'> rows
 
 
-#This needs to be acccessed
 def jsonfilter(arg1,arg2):
     
   
