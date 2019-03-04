@@ -1,9 +1,9 @@
-
 Flask==0.10.1
 Flask-Cors==3.0.7
 ipython==2.2.0
 itsdangerous==0.24
 Jinja2==2.7.1
+jmespath==0.9.4
 MarkupSafe==0.18
 PyYAML==3.11
 six==1.12.0
