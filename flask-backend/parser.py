@@ -19,22 +19,16 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-values = {}
-filter_values = {}
+
 
 #This needs to be acccessed
 def jsonfilter(arg1,arg2):
     
-    #expression = jmespath.compile(arg1)
-    #arg2 = dict(arg2)
-    print("args:" + str(arg1) +"\n" +str(arg2))
-    #arg1 should be json
-    #arg2 should be a string
-    #return expression.search(arg2,arg1)
+  
  
     output_dict = jmespath.search(arg2,arg1)
     if output_dict is None:
-        return "[!] Please check your json values again"
+        return "\n\n[!] Please check your json values again....\n"
     else:
         return output_dict
     #return type(arg1),arg1,type(arg2),arg2
@@ -106,7 +100,7 @@ def convert():
 
     
        
-        # values = {}
+        values = {}
         
   
         # print("This is the key: " + str(key))
@@ -121,7 +115,7 @@ def convert():
                     print("values1: " + str(values1))
                     values.update(values1)
 
-               
+                
               
 
 
@@ -131,13 +125,15 @@ def convert():
                 return "[!] You have not put valid json in DYNAMIC_PRESET_DATA box please check again"     
                 # elif json_request['request_info']['dynamic'] == " ":
                 #     pass
+            # finally:
 
-                if 'DYNAMIC_PRESET_DATA' not in json_request['request_info']['template'] or json_request['request_info']['dynamic'] == " ":
+            #     if 'DYNAMIC_PRESET_DATA' not in json_request['request_info']['template']:
                     
                    
-                    value = json_request['request_info']['dynamic']
-                    values1 = json.loads(value)
-                    values.update(values1)
+            #         value = json_request['request_info']['dynamic']
+            #         #print(value)
+            #         values1 = json.loads(value)
+            #         values.update(values1)
               
 
          
@@ -146,21 +142,21 @@ def convert():
             try:
 
                 if 'WORKFLOW_METADATA' in json_request['request_info']['template']:
-                    
-                    if 'jsonquery' in json_request['request_info']['template']:
-                        return "do this"
-                    else:
-                        value = json_request['request_info']['workflow']
-                        values2 = json.loads(value)
-                        values.update(values2)
+                    value = sub_workflow + json_request['request_info']['workflow'] + "}"
+                    print(str(values))
+                    values2 = json.loads(value)
+            
+                    values.update(values2)
+
 
 
             except ValueError as e:
                 return "[!] You have not put valid json in WORKFLOW_METADATA box please check again" 
 
 
-               
-                if 'WORKFLOW_METADATA' not in json_request['request_info']['template'] or json_request['request_info']['workflow'] == " ":
+              
+
+                if 'WORKFLOW_METADATA' not in json_request['request_info']['template']:
                     value = json_request['request_info']['workflow']
                     values2 = json.loads(value)
                     values.update(values2)
@@ -175,22 +171,38 @@ def convert():
 
                 if 'MOVIE_METADATA' in json_request['request_info']['template']:
                     
-                    if 'jsonquery' in json_request['request_info']['template']:
-                        return "do this"
-                    else:
-                        value = json_request['request_info']['movie']
-                        values3 = json.loads(value)
-                        values.update(values3)
+                    value = sub_movie + json_request['request_info']['movie'] + "}"
+                    print(str(values))
+                    values3 = json.loads(value)
+                    
+                    values.update(values3)
 
             except ValueError as e:
                 return "[!] You have not put valid json in MOVIE_METADATA box please check again"
 
-                if 'MOVIE_METADATA' not in json_request['request_info']['template'] or json_request['request_info']['movie'] == " ":
+      
+
+                if 'MOVIE_METADATA' not in json_request['request_info']['template']:
                     value = json_request['request_info']['movie']
                     values3 = json.loads(value)
                     values.update(values3)
 
 
+            try:
+
+
+                
+                    
+                value = json_request['request_info']['other'] 
+                print(str(values))
+                values4 = json.loads(value)
+                    
+                values.update(values4)
+
+            except ValueError as e:
+                return "[!] You have not put valid json in \"OTHER box\" please check again"
+
+    
          
 
            

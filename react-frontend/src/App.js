@@ -18,7 +18,8 @@ export default class App extends Component {
         value3: ' ',
         value4: ' ',
         value5: ' ',
-        dummy_values: false,
+        value6: ' ',
+       
 
         };
         //for reset
@@ -59,6 +60,7 @@ export default class App extends Component {
             dynamic: this.state.value3,
             workflow: this.state.value4,
             movie: this.state.value5,
+            other: this.state.value6,
             input_type: "json",
           
         }
@@ -106,6 +108,9 @@ export default class App extends Component {
 
  handleChange5(event) {
      this.setState({value5: event.target.value});
+  }
+   handleChange6(event) {
+     this.setState({value6: event.target.value});
   }
 
 
@@ -161,17 +166,21 @@ export default class App extends Component {
       </div>
             <div class="row">
            
-             <div class="col-md-4">
+             <div class="col-md-3">
                 <h2>DYNAMIC_PRESET_DATA</h2>
                 <textarea id="values" value={this.state.value3} placeholder={" \"DYNAMIC_PRESET_DATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange3.bind(this)}></textarea>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-3">
                 <h2>WORKFLOW_METADATA</h2>
                 <textarea id="values" value={this.state.value4}  placeholder={" \"WORKFLOW_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange4.bind(this)}></textarea>
              </div>
-             <div class="col-md-4">
+             <div class="col-md-3">
                 <h2>MOVIE_METADATA</h2>
                 <textarea id="values" value={this.state.value5} placeholder={" \"MOVIE_METADATA\" : {\"name\": \"John\", \"test\": true }"}  onChange={this.handleChange5.bind(this)}></textarea>
+             </div>
+             <div class="col-md-3">
+                <h2>OTHER</h2>
+                <textarea id="values" value={this.state.value6} placeholder={" Any json values that are not for or used in Dynamic/Workflow/Movie"}  onChange={this.handleChange6.bind(this)}></textarea>
              </div>
           </div>
           </form>
