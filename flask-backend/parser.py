@@ -12,22 +12,29 @@ import config
 import json
 import yaml
 
+import jmespath
+
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-
-
+values = {}
+filter_values = {}
 
 #This needs to be acccessed
-def jsonfilter(*args):
-
-   
-
-    # print("args:" + str(args))
-
-    return ", ".join( repr(e) for e in args)
+def jsonfilter(arg1,arg2):
+    
+    #expression = jmespath.compile(arg1)
+    #arg2 = dict(arg2)
+    print("args:" + str(arg1) +"\n" +str(arg2))
+    #arg1 should be json
+    #arg2 should be a string
+    #return expression.search(arg2,arg1)
+ 
+    output_dict = jmespath.search(arg2,arg1)
+    return output_dict
+    #return type(arg1),arg1,type(arg2),arg2
 
 
 
@@ -96,7 +103,7 @@ def convert():
 
     
        
-        values = {}
+        # values = {}
         
   
         # print("This is the key: " + str(key))
@@ -104,13 +111,17 @@ def convert():
         if json_request['request_info']['input_type'] == "json":
                     
             try:
-
                 if 'DYNAMIC_PRESET_DATA' in json_request['request_info']['template']:
                     value = sub_dynamic + json_request['request_info']['dynamic'] + "}"
                     print(str(values))
                     values1 = json.loads(value)
                     print("values1: " + str(values1))
                     values.update(values1)
+
+                elif 'DYNAMIC_PRESET_DATA |' in json_request['request_info']['template'] and 'jsonquery' in json_request['request_info']['template']:
+                    print("do this")
+              
+
 
 
                     
@@ -134,10 +145,14 @@ def convert():
 
                 if 'WORKFLOW_METADATA' in json_request['request_info']['template']:
                     
-                    
-                    value = json_request['request_info']['workflow']
-                    values2 = json.loads(value)
-                    values.update(values2)
+                    if 'jsonquery' in json_request['request_info']['template']:
+                        return "do this"
+                    else:
+                        value = json_request['request_info']['workflow']
+                        values2 = json.loads(value)
+                        values.update(values2)
+
+
             except ValueError as e:
                 return "[!] You have not put valid json in WORKFLOW_METADATA box please check again" 
 
@@ -158,10 +173,12 @@ def convert():
 
                 if 'MOVIE_METADATA' in json_request['request_info']['template']:
                     
-                   
-                    value = json_request['request_info']['movie']
-                    values3 = json.loads(value)
-                    values.update(values3)
+                    if 'jsonquery' in json_request['request_info']['template']:
+                        return "do this"
+                    else:
+                        value = json_request['request_info']['movie']
+                        values3 = json.loads(value)
+                        values.update(values3)
 
             except ValueError as e:
                 return "[!] You have not put valid json in MOVIE_METADATA box please check again"
