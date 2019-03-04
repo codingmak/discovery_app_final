@@ -33,7 +33,10 @@ def jsonfilter(arg1,arg2):
     #return expression.search(arg2,arg1)
  
     output_dict = jmespath.search(arg2,arg1)
-    return output_dict
+    if output_dict is None:
+        return "[!] Please check your json values again"
+    else:
+        return output_dict
     #return type(arg1),arg1,type(arg2),arg2
 
 
@@ -118,8 +121,7 @@ def convert():
                     print("values1: " + str(values1))
                     values.update(values1)
 
-                elif 'DYNAMIC_PRESET_DATA |' in json_request['request_info']['template'] and 'jsonquery' in json_request['request_info']['template']:
-                    print("do this")
+               
               
 
 
