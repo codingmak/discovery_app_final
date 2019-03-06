@@ -13,7 +13,7 @@ import json
 import yaml
 
 import jmespath
-
+import re
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -188,9 +188,9 @@ def convert():
 
 
             try:
-
-
-                if json_request['request_info']['other'] == " ":
+                pattern = re.compile("\s+")
+                
+                if json_request['request_info']['other'] == "" or re.match(pattern,json_request['request_info']['other']):
                    value = "{\"\":\"\"\}"
                 else:  
 
@@ -203,7 +203,7 @@ def convert():
             except ValueError as e:
                 return "[!] You have not put valid json in \"OTHER box\" please check again"
 
-    
+                
          
 
            
