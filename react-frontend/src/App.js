@@ -18,7 +18,7 @@ export default class App extends Component {
         value3: ' ',
         value4: ' ',
         value5: ' ',
-        value6: '{\" \":\" \"}',
+        value6: ' ',
        
 
         };

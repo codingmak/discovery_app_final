@@ -190,7 +190,7 @@ def convert():
             try:
 
 
-                if json_request['request_info']['other'] == "":
+                if json_request['request_info']['other'] == " ":
                    value = "{\"\":\"\"\}"
                 else:  
 
