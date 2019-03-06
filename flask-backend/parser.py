@@ -190,13 +190,15 @@ def convert():
             try:
 
 
-                
-                    
-                value = json_request['request_info']['other'] 
-                print(str(values))
-                values4 = json.loads(value)
-                    
-                values.update(values4)
+                if json_request['request_info']['other'] == "":
+                   value = "{\"\":\"\"\}"
+                else:  
+
+                    value = json_request['request_info']['other'] 
+                    print(str(values))
+                    values4 = json.loads(value)
+                        
+                    values.update(values4)
 
             except ValueError as e:
                 return "[!] You have not put valid json in \"OTHER box\" please check again"
