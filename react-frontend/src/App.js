@@ -18,7 +18,7 @@ export default class App extends Component {
         value3: ' ',
         value4: ' ',
         value5: ' ',
-        value6: ' ',
+        value6: '',
        
 
         };
@@ -143,7 +143,7 @@ export default class App extends Component {
 
          <div class="col-md-5">
             <h2>Template</h2>
-            <textarea id="template" value={this.state.value1} placeholder=" Hello {{name}}! {% if test -%} How are you?{%- endif %}" onChange={this.handleChange1.bind(this)}/>
+            <textarea id="template" value={this.state.value1}  onChange={this.handleChange1.bind(this)}/>
             
          </div>
 
@@ -166,22 +166,26 @@ export default class App extends Component {
       </div>
             <div class="row">
            
-             <div class="col-md-3">
+             <div class="col-md-6">
                 <h2>DYNAMIC_PRESET_DATA</h2>
-                <textarea id="values"  placeholder={" Make sure you use double quotes in your json"} value={this.state.value3} onChange={this.handleChange3.bind(this)}></textarea>
+                <textarea id="values"   value={this.state.value3} onChange={this.handleChange3.bind(this)}></textarea>
              </div>
-             <div class="col-md-3">
+             <div class="col-md-6">
                 <h2>WORKFLOW_METADATA</h2>
-                <textarea id="values"  placeholder={" Make sure you use double quotes in your json"} value={this.state.value4}  onChange={this.handleChange4.bind(this)}></textarea>
+                <textarea id="values"   value={this.state.value4}  onChange={this.handleChange4.bind(this)}></textarea>
              </div>
-             <div class="col-md-3">
+
+             
+             <div class="col-md-6">
                 <h2>MOVIE_METADATA</h2>
-                <textarea id="values" placeholder={" Make sure you use double quotes in your json"}  value={this.state.value5} onChange={this.handleChange5.bind(this)}></textarea>
+                <textarea id="values"  value={this.state.value5} onChange={this.handleChange5.bind(this)}></textarea>
              </div>
-             <div class="col-md-3">
+             <div class="col-md-6">
                 <h2>OTHER</h2>
-                <textarea id="values"  placeholder={" Any json values that are not for or used in Dynamic/Workflow/Movie"} value={this.state.value6} onChange={this.handleChange6.bind(this)}></textarea>
-             </div>
+                <textarea id="values" value={this.state.value6} onChange={this.handleChange6.bind(this)}></textarea>
+            
+            </div>
+
           </div>
           </form>
 </div>

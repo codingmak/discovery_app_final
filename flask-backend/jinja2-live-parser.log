@@ -1301,3 +1301,79 @@ Traceback (most recent call last):
   File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2019-03-06 11:59:38,693 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 116, in convert
+    print(str(values) + "and this is the type" + type(values))
+TypeError: must be str, not type
+2019-03-06 11:59:42,185 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 116, in convert
+    print(str(values) + "and this is the type" + type(values))
+TypeError: must be str, not type
+2019-03-06 12:04:51,902 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 219, in convert
+    for key, val in values.dict():
+AttributeError: 'dict' object has no attribute 'dict'
+2019-03-06 12:08:51,271 - __main__ - ERROR - Exception on /convert [POST]
+Traceback (most recent call last):
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/django/.local/share/virtualenvs/flask-backend-4nHDySRL/lib/python3.6/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "parser.py", line 220, in convert
+    print(values[key][val])
+NameError: name 'key' is not defined

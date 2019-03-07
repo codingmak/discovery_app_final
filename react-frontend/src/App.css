@@ -10,18 +10,35 @@ ul{
 
 
 
+#render
+{
 
+	
+    width: 100%;
+    min-height: 300px;
 
+    font-family: "Courier New", Courier, monospace;
+   
+
+    border: 1px solid #ccc;
+
+}
+
+.col-md-3,
 #template,
-#render,
+
 #values {
 	
-	overflow-x: auto; 
-     width: 100%;
+	overflow-x: auto;
+
+	resize: vertical;
+	resize: horizontal;
+    width: 100%;
     min-height: 300px;
-    resize: vertical;
+
     font-family: "Courier New", Courier, monospace;
-    
+
+
     border: 1px solid #ccc;
 
 }

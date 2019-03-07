@@ -107,11 +107,16 @@ def convert():
         if json_request['request_info']['input_type'] == "json":
                     
             try:
+
+
                 if 'DYNAMIC_PRESET_DATA' in json_request['request_info']['template']:
+
                     value = sub_dynamic + json_request['request_info']['dynamic'] + "}"
-                    print(str(values))
+                    
+                   
+                 
                     values1 = json.loads(value)
-                    print("values1: " + str(values1))
+               
                     values.update(values1)
 
                 
@@ -122,27 +127,14 @@ def convert():
                     
             except ValueError as e:
                 return "[!] You have not put valid json in DYNAMIC_PRESET_DATA box please check again"     
-                # elif json_request['request_info']['dynamic'] == " ":
-                #     pass
-            # finally:
-
-            #     if 'DYNAMIC_PRESET_DATA' not in json_request['request_info']['template']:
-                    
-                   
-            #         value = json_request['request_info']['dynamic']
-            #         #print(value)
-            #         values1 = json.loads(value)
-            #         values.update(values1)
-              
-
-         
+       
 
 
             try:
 
                 if 'WORKFLOW_METADATA' in json_request['request_info']['template']:
                     value = sub_workflow + json_request['request_info']['workflow'] + "}"
-                    print(str(values))
+                   
                     values2 = json.loads(value)
             
                     values.update(values2)
@@ -188,9 +180,9 @@ def convert():
 
 
             try:
-                pattern = re.compile("\s+")
                 
-                if json_request['request_info']['other'] == "" or re.match(pattern,json_request['request_info']['other']):
+                
+                if json_request['request_info']['other'] == "" or "{" not in json_request['request_info']['other']:
                    value = "{\"\":\"\"\}"
                 else:  
 
@@ -208,11 +200,19 @@ def convert():
 
            
         try:
+
       
+            #set logic here if key is not there
+            for key,value in values.items():
+                print(key)
+                # if key not in json_request['request_info']['template']:
+                #     print("Not in here")
+
+            
             rendered_jinja2_tpl = jinja2_tpl.render(values)
    
        
-        except (exceptions.TemplateRuntimeError, ValueError, TypeError) as e:
+        except (exceptions.TemplateRuntimeError, ValueError, TypeError, KeyError) as e:
             return "[!] Error in your values input field: {0}".format(e)
 
 
