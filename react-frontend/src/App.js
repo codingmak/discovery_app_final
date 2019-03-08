@@ -135,36 +135,39 @@ export default class App extends Component {
 
     return (
      <div className="App">
-   <p>
-      {window.token}
-   </p>
-   <form class="container">
-      <div class="row">
 
-         <div class="col-md-5">
+   <form class="container">
+      <div class="form-group render-template">
+       
+        <div class="template">
+          <div class="col-md-6">
+
             <h2>Template</h2>
             <textarea id="template" value={this.state.value1}  onChange={this.handleChange1.bind(this)}/>
             
-         </div>
+          </div>
+
+     
+           <div class="col-md-6">
+            
+             <h2>Render</h2>
+             <div id="render" class="render"> {this.state.loading || !this.state.data ? < div id="render"></div> :
+                                    <div>{this.state.data.toString().replace(/•/g, " ")}</div>
+                                }
+           </div>
+
+        </div>
+          <div class="button-top">
+              <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
+              <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
+          </div>
+
+        </div>
+      </div>
 
        
-         <div class="col-md-5">
-         <h2>Render</h2>
-         <div id="render"> {this.state.loading || !this.state.data ? < div id="render"></div> : <div>{this.state.data.toString().replace(/•/g, " ")}</div>}
-         </div>
-
-         
-      </div>
-       <div class="col-md-2">
-           <div style={{position: 'absolute', bottom: 0}}>
-               <input type="button" class="btn btn-success" id="convert" value="Convert" onClick={this.click} disabled={this.state.isLoading}/>
-               <input type="button" class="btn btn-danger" id="clear" value="Clear" onClick={this.resetForm}/>
-               </div>
-             </div>
-
-
-      </div>
-            <div class="row">
+            <div class="form-group">
+           
            
              <div class="col-md-6">
                 <h2>DYNAMIC_PRESET_DATA</h2>

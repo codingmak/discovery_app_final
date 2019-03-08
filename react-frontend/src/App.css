@@ -8,33 +8,31 @@ ul{
 	
 }
 
-
-
-#render
-{
-
-	
-    width: 100%;
-    min-height: 300px;
-
-    font-family: "Courier New", Courier, monospace;
-   
-
-    border: 1px solid #ccc;
+.template{
+	display: flex;
+	flex-direction: row;
 
 }
 
+.render-template{
+	display: flex;
+	flex-direction: column;
+	align-content: flex-end;
+}
+
+
+
+
 .col-md-3,
 #template,
-
+#render,
 #values {
 	
-	overflow-x: auto;
 
-	resize: vertical;
-	resize: horizontal;
+	overflow: auto;
+
     width: 100%;
-    min-height: 300px;
+    height: 300px;
 
     font-family: "Courier New", Courier, monospace;
 

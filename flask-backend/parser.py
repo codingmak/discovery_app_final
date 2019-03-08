@@ -40,7 +40,7 @@ def jsonfilter(arg1,arg2):
 
 @app.route("/")
 def home():
-    return render_template('index.html', token="App is running" )
+    return render_template('index.html', token="" )
 
 
 
@@ -102,7 +102,6 @@ def convert():
         values = {}
         
   
-        # print("This is the key: " + str(key))
      
         if json_request['request_info']['input_type'] == "json":
                     
@@ -163,7 +162,7 @@ def convert():
                 if 'MOVIE_METADATA' in json_request['request_info']['template']:
                     
                     value = sub_movie + json_request['request_info']['movie'] + "}"
-                    print(str(values))
+                
                     values3 = json.loads(value)
                     
                     values.update(values3)
@@ -187,7 +186,7 @@ def convert():
                 else:  
 
                     value = json_request['request_info']['other'] 
-                    print(str(values))
+                  
                     values4 = json.loads(value)
                         
                     values.update(values4)
@@ -202,12 +201,7 @@ def convert():
         try:
 
       
-            #set logic here if key is not there
-            for key,value in values.items():
-                print(key)
-                # if key not in json_request['request_info']['template']:
-                #     print("Not in here")
-
+          
             
             rendered_jinja2_tpl = jinja2_tpl.render(values)
    
@@ -218,9 +212,6 @@ def convert():
 
 
             
-        
-        # if key in values:
-        #     print("qwer")
 
 
         return rendered_jinja2_tpl
