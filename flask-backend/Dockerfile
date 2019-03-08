@@ -4,7 +4,9 @@ FROM python:3.6
 
 RUN git clone https://github.com/codingmak/discovery_app_final 
 
-COPY requirements.txt parser.py /tmp
+COPY parser.py /tmp
+
+COPY requirements.txt /tmp
 
 WORKDIR /tmp
 
