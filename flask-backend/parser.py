@@ -29,7 +29,6 @@ def jsonfilter(arg1,arg2):
     if output_dict is None:
         return "\n\n[!] Please check your json values again....\n"
     else:
-        print(type(arg1),arg1,type(arg2),arg2)
         return output_dict
         
 
