@@ -1,24 +1,16 @@
 
+#Please read 
 
-Run docker image:
-
-BUILD:
-
-docker build -t  myimage1
-
-RUN:
-
-docker run image1
+***Running from python file:
+1) Install: python3
+2) pip3 install -r requirements.txt && python3 parser.py
 
 
+***Running with Docker:
 
-#Please read this to use the app effectively
+docker build -t [myimage] . && docker run -it [myimage]
 
+Note:
 
-1) Make sure to add double quotes to your json or there will be errors!
-
-2) You can minimize or expand the window size close the ones you are not using.
-
-3) If your template does not contain DynamicPresetData, WorkflowMetadata or MovieMetadata  be sure to use the Other box.
-
-4) Advise to copy at most 30-40 lines of code at a time.
+1) Make sure to add double quotes to your json and not single quotes or it will be considered invalid json.
+2) If your template does not contain DynamicPresetData, WorkflowMetadata or MovieMetadata be sure to use the "Other" box.

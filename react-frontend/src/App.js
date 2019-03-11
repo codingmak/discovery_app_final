@@ -29,7 +29,7 @@ export default class App extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.click = this.click.bind(this);
-        this.handleRadioChange = this.handleRadioChange.bind(this);
+
         
         
     }
@@ -86,41 +86,38 @@ export default class App extends Component {
 
 
 
-  handleRadioChange(src) {
-    this.setState({flag: src});
-     console.log(`You chose${src} `);
-  }
 
 
-  handleChange1(event) {
+handleChange1(event) {
     this.setState({value1: event.target.value});
   }
 
 
 
- handleChange3(event) {
+handleChange3(event) {
      this.setState({value3: event.target.value});
   }
 
- handleChange4(event) {
+handleChange4(event) {
      this.setState({value4: event.target.value});
   }
 
- handleChange5(event) {
+handleChange5(event) {
      this.setState({value5: event.target.value});
   }
-   handleChange6(event) {
+   
+handleChange6(event) {
      this.setState({value6: event.target.value});
   }
 
 
-  toggleDummy(event) {
+toggleDummy(event) {
    this.setState({dummy_values: !this.state.dummy_values});
 }
 
 
 
-  handleSubmit(event) {
+handleSubmit(event) {
     event.preventDefault();
 }
     
