@@ -7,7 +7,6 @@
 
 
 ***Running with Docker:
-
 docker build -t [myimage] . && docker run -it [myimage]
 
 Note:
