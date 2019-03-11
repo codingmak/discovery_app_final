@@ -227,4 +227,4 @@ if __name__ == "__main__":
     file_handler.setLevel(logging.__getattribute__(config.LOGGING_LEVEL))
     app.logger.addHandler(file_handler)
 
-    app.run()
+    app.run(host="0.0.0.0")
